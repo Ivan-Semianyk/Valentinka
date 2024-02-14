@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ua">
+    <head>
+        <link href="style2.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Йдемо гуляти?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://i.postimg.cc/CKfWDG6j/first.gif">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Таааааак!</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Нііііііі</button>
+
+            </div>
+        </div>                
+        <script>
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+
+            function moveButton() {
+                let x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                let y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                document.getElementById('noButton').style.left = `${x}px`;
+                document.getElementById('noButton').style.top = `${y}px`;
+            }
+        </script>
+    </body>
+</html>
